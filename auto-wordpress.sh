@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # 	Instant Wordpress!
 # 	------------------
@@ -6,7 +6,7 @@
 #		
 # 	To use this script, go to the directory you want to install Wordpress to in the terminal and run this command:
 # 
-# 	curl https://raw.github.com/simonpioli/auto-wordpress/master/auto-wordpress.sh | sh
+# 	curl https://raw.github.com/simonpioli/auto-wordpress/master/auto-wordpress.sh | bash
 #
 # 	There you go.
 #
@@ -19,7 +19,9 @@ unzip -q latest.zip;
 
 # Base Theme
 echo "Which base theme? bones, underscore"
+
 read theme
+
 echo "What should we call it?"
 read newname
 if [[ "$theme" == "bones" ]]; then
