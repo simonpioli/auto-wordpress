@@ -6,7 +6,7 @@
 #		
 # 	To use this script, go to the directory you want to install Wordpress to in the terminal and run this command:
 # 
-# 	curl scripts.snaptortoise.com/wordpress | sh
+# 	curl https://raw.github.com/simonpioli/auto-wordpress/master/auto-wordpress.sh | sh
 #
 # 	There you go.
 #
@@ -16,6 +16,25 @@
 echo "Fetching WordPress...";
 wget --quiet http://wordpress.org/latest.zip;
 unzip -q latest.zip;
+
+# Base Theme
+echo "Which base theme? bones, underscore"
+read theme
+echo "What should we call it?"
+read newname
+if [[ "$theme" == "bones" ]]; then
+	echo "Fetching Bones...";
+	wget --quiet https://github.com/eddiemachado/bones/archive/master.zip;
+	unzip -q bones-master.zip;
+	mv bones-master wordpress/wp-content/themes/
+	mv wordpress/wp-content/themes/bones-master wordpress/wp-content/themes/$newname
+elif [[ "$theme" == "underscore" ]]; then
+	echo "Fetching Underscore...";
+	wget --quiet https://github.com/Automattic/_s/archive/master.zip;
+	unzip -q _s-master.zip;
+	mv _s-master wordpress/wp-content/themes/
+	mv wordpress/wp-content/themes/_s-master wordpress/wp-content/themes/$newname
+fi
 
 # All-in-One-SEO-Pack
 echo "Fetching All-in-One-SEO-Pack plugin...";
