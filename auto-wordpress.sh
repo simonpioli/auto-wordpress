@@ -10,7 +10,7 @@ echo "Which base theme? 'bones', 'underscore' or 'none' if you don't want a base
 read theme
 
 if [ $theme != "none" ]; then
-	echo "What should we call it?"
+	echo "What should we call the theme?"
 	read newname
 
 	if [ $theme == "bones" ]; then
