@@ -2,7 +2,7 @@
 
 # Latest version of WP
 echo "Fetching WordPress...";
-curl -O http://wordpress.org/latest.zip;
+curl -O https://wordpress.org/latest.zip;
 unzip -q latest.zip;
 
 # Base Theme
